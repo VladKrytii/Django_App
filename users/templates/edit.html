@@ -1,0 +1,62 @@
+{% extends "_layout.html" %}
+
+{% block content %}
+<h1>Edit User</h1>
+
+<form method="post" class="edit-form" enctype="multipart/form-data">
+    {% csrf_token %}
+    {% if form.avatar.value %}
+    <div class="avatar">
+        <img src="{{form.avatar.value.url}}" alt="">
+    </div>
+    {% endif %}
+    <div class="mb-3">
+        <label class="form-label">Name</label>
+        <input value="{{ form.name.value }}" type="text" name="name" class="form-control" placeholder="Enter user name">
+    </div>
+    <div class="mb-3">
+        <label class="form-label">Email</label>
+        <input value="{{ form.email.value }}" type="email" name="email" class="form-control"
+            placeholder="Enter email address">
+    </div>
+    <div class="mb-3">
+        <label class="form-label">Phone</label>
+        <!-- <input value="{{ form.phone.value }}" type="tel" name="phone" class="form-control"
+            placeholder="Enter phone number"> -->
+        {{form.phone}}
+    </div>
+    <div class="mb-3">
+        <label class="form-label">{{form.role.label}}</label>
+        {{form.role}}
+    </div>
+    <div class="mb-3">
+        <label class="form-label">New Avatar</label>
+        <input type="file" name="avatar" class="form-control">
+    </div>
+    <div>
+        <button type="submit" class="btn btn-primary">Edit</button>
+    </div>
+</form>
+{% endblock %}
+
+{% block script %}
+<script>
+    const avatarInput = document.querySelector('input[name="avatar"]');
+    const avatarImg = document.querySelector('.avatar img');
+
+    // avatarImg.addEventListener('click', () => {
+    //     avatarInput.click();
+    // });
+
+    avatarInput.addEventListener('change', () => {
+        const file = avatarInput.files[0];
+        const reader = new FileReader();
+
+        reader.onload = () => {
+            avatarImg.src = reader.result;
+        }
+
+        reader.readAsDataURL(file);
+    });
+</script>
+{% endblock script %}
