@@ -9,7 +9,32 @@ body>.container {
     flex-grow: 1;
 }
 
+<<<<<<< HEAD
+.user-catalog .card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.edit-form .avatar {
+    text-align: center;
+}
+
+.edit-form img {
+    width: auto;
+    height: 200px;
+    border-radius: 10px;
+    object-fit: contain;
+}
+
+footer {
+    background-color: rgb(60, 60, 60);
+    padding: 20px;
+    color: white;
+    text-align: center;
+=======
 footer {
     padding: 10px;
     color: white;
+>>>>>>> dc1f4132362026a9f0402b8b11dd257e05e6c0df
 }

@@ -1,3 +1,10 @@
+<<<<<<< HEAD
+from django.forms import model_to_dict
+from django.http import HttpResponse
+from django.shortcuts import redirect, render
+from django.contrib.auth.views import LoginView
+from django.contrib import messages
+=======
 from django.http import HttpResponse
 <<<<<<< HEAD
 from django.shortcuts import render
@@ -66,10 +73,15 @@ users = [
 ]
 =======
 from django.shortcuts import redirect, render
+>>>>>>> dc1f4132362026a9f0402b8b11dd257e05e6c0df
 
 from users.forms.create import CreateUser
 from users.forms.edit import EditUser
 from users.models import User
+<<<<<<< HEAD
+
+def index(request):
+=======
 >>>>>>> 9006665 (Initial commit)
 
 
@@ -94,21 +106,37 @@ def details(request, id):
     return HttpResponse("<h1>Hello, World!</h1>")
 
 def home(request):
+>>>>>>> dc1f4132362026a9f0402b8b11dd257e05e6c0df
     users = User.objects.all()
     return render(request, "index.html", {"users": users})
 
 
+<<<<<<< HEAD
+def catalog(request):
+    users = User.objects.all()
+    return render(request, "catalog.html", {"users": users})
+=======
 
 def list(request):
     users = User.objects.all()
     return render(request, "index.html", {"users": users})
+>>>>>>> dc1f4132362026a9f0402b8b11dd257e05e6c0df
 
 
 def details(request, id):
     user = User.objects.get(id=id)
     # TODO: check if user exists
 
+<<<<<<< HEAD
+    return render(request, "details.html", {
+        "user": {
+            **model_to_dict(user),
+            "roleName": User.ROLE_CHOICES[user.role][1]
+        }, 
+        "return_url": "/"})
+=======
     return render(request, "details.html", {"user": user})
+>>>>>>> dc1f4132362026a9f0402b8b11dd257e05e6c0df
 
 
 def create(request):
@@ -116,6 +144,19 @@ def create(request):
     form = CreateUser()
 
     if request.method == "POST":
+<<<<<<< HEAD
+        form = CreateUser(request.POST, request.FILES)
+
+        if form.is_valid():
+            form.save()
+
+            messages.success(request, "User created successfully!")
+            return redirect("/")
+        else:
+            messages.error(request, "Invalid data!")
+
+    return render(request, "create.html", {"form": form, "return_url": "/", "roles": User.ROLE_CHOICES})
+=======
         form = CreateUser(request.POST)
 
         if form.is_valid():
@@ -123,6 +164,7 @@ def create(request):
             return redirect("/users")
 
     return render(request, "create.html", {"form": form})
+>>>>>>> dc1f4132362026a9f0402b8b11dd257e05e6c0df
 
 
 def edit(request, id):
@@ -135,6 +177,18 @@ def edit(request, id):
     form = EditUser(instance=user)
 
     if request.method == "POST":
+<<<<<<< HEAD
+        form = CreateUser(request.POST, request.FILES, instance=user)
+
+        if request.FILES and user.avatar: # do work when avatar != None, 0, False, "", [], (), {}
+            user.avatar.delete()
+
+        if form.is_valid():
+            form.save()
+            return redirect("/")
+
+    return render(request, "edit.html", {"form": form, "return_url": "/"})
+=======
         form = CreateUser(request.POST, instance=user)
 
         if form.is_valid():
@@ -142,6 +196,7 @@ def edit(request, id):
             return redirect("/users")
 
     return render(request, "edit.html", {"form": form})
+>>>>>>> dc1f4132362026a9f0402b8b11dd257e05e6c0df
 
 
 def delete(request, id):
@@ -150,7 +205,25 @@ def delete(request, id):
     if user is None:
         return HttpResponse("User not found")
 
+<<<<<<< HEAD
+    if user.avatar: # do work when avatar != None, 0, False, "", [], (), {}
+        user.avatar.delete()
+        
+    user.delete()
+
+    return redirect("/")
+
+
+class CustomLoginView(LoginView):
+    # template_name = 'login.html'
+    # authentication_form = CustomAuthenticationForm
+
+    def form_valid(self, form):
+        # Add your authentication logic here
+        return super().form_valid(form)
+=======
     user.delete()
 
     return redirect("/users")
 >>>>>>> 9006665 (Initial commit)
+>>>>>>> dc1f4132362026a9f0402b8b11dd257e05e6c0df

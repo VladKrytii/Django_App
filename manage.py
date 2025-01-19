@@ -18,9 +18,13 @@ def main():
     execute_from_command_line(sys.argv)
 
 <<<<<<< HEAD
+
+=======
+<<<<<<< HEAD
 # main
 =======
 
 >>>>>>> 9006665 (Initial commit)
+>>>>>>> dc1f4132362026a9f0402b8b11dd257e05e6c0df
 if __name__ == '__main__':
     main()
