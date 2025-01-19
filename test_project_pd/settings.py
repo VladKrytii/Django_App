@@ -10,7 +10,10 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/5.1/ref/settings/
 """
 
+<<<<<<< HEAD
 import os
+=======
+>>>>>>> dc1f4132362026a9f0402b8b11dd257e05e6c0df
 from pathlib import Path
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -21,17 +24,65 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/5.1/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
+<<<<<<< HEAD
 SECRET_KEY = "django-insecure-jwo87z=&%8c&6gh6ndz@a41m!9n@58cm4ikqo278b)47(10*)-"
+=======
+<<<<<<< HEAD
+SECRET_KEY = 'django-insecure-jwo87z=&%8c&6gh6ndz@a41m!9n@58cm4ikqo278b)47(10*)-'
+=======
+SECRET_KEY = "django-insecure-jwo87z=&%8c&6gh6ndz@a41m!9n@58cm4ikqo278b)47(10*)-"
+>>>>>>> 9006665 (Initial commit)
+>>>>>>> dc1f4132362026a9f0402b8b11dd257e05e6c0df
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
+<<<<<<< HEAD
 ALLOWED_HOSTS = ["*"]
+=======
+ALLOWED_HOSTS = []
+>>>>>>> dc1f4132362026a9f0402b8b11dd257e05e6c0df
 
 
 # Application definition
 
 INSTALLED_APPS = [
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+    'django.contrib.admin',
+    'django.contrib.auth',
+    'django.contrib.contenttypes',
+    'django.contrib.sessions',
+    'django.contrib.messages',
+    'django.contrib.staticfiles',
+]
+
+MIDDLEWARE = [
+    'django.middleware.security.SecurityMiddleware',
+    'django.contrib.sessions.middleware.SessionMiddleware',
+    'django.middleware.common.CommonMiddleware',
+    'django.middleware.csrf.CsrfViewMiddleware',
+    'django.contrib.auth.middleware.AuthenticationMiddleware',
+    'django.contrib.messages.middleware.MessageMiddleware',
+    'django.middleware.clickjacking.XFrameOptionsMiddleware',
+]
+
+ROOT_URLCONF = 'test_project_pd.urls'
+
+TEMPLATES = [
+    {
+        'BACKEND': 'django.template.backends.django.DjangoTemplates',
+        'DIRS': [],
+        'APP_DIRS': True,
+        'OPTIONS': {
+            'context_processors': [
+                'django.template.context_processors.debug',
+                'django.template.context_processors.request',
+                'django.contrib.auth.context_processors.auth',
+                'django.contrib.messages.context_processors.messages',
+=======
+>>>>>>> dc1f4132362026a9f0402b8b11dd257e05e6c0df
     "django.contrib.admin",
     "django.contrib.auth",
     "django.contrib.contenttypes",
@@ -64,18 +115,31 @@ TEMPLATES = [
                 "django.template.context_processors.request",
                 "django.contrib.auth.context_processors.auth",
                 "django.contrib.messages.context_processors.messages",
+<<<<<<< HEAD
+=======
+>>>>>>> 9006665 (Initial commit)
+>>>>>>> dc1f4132362026a9f0402b8b11dd257e05e6c0df
             ],
         },
     },
 ]
 
+<<<<<<< HEAD
 WSGI_APPLICATION = "test_project_pd.wsgi.application"
+=======
+<<<<<<< HEAD
+WSGI_APPLICATION = 'test_project_pd.wsgi.application'
+=======
+WSGI_APPLICATION = "test_project_pd.wsgi.application"
+>>>>>>> 9006665 (Initial commit)
+>>>>>>> dc1f4132362026a9f0402b8b11dd257e05e6c0df
 
 
 # Database
 # https://docs.djangoproject.com/en/5.1/ref/settings/#databases
 
 DATABASES = {
+<<<<<<< HEAD
     "default": {
         "ENGINE": "django.db.backends.sqlite3",
         "NAME": BASE_DIR / "db.sqlite3",
@@ -92,12 +156,41 @@ DATABASES = {
 }
 
 DATABASE_CONNECTION_POOLING = False
+=======
+<<<<<<< HEAD
+    'default': {
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': BASE_DIR / 'db.sqlite3',
+=======
+    "default": {
+        "ENGINE": "django.db.backends.sqlite3",
+        "NAME": BASE_DIR / "db.sqlite3",
+>>>>>>> 9006665 (Initial commit)
+    }
+}
+
+>>>>>>> dc1f4132362026a9f0402b8b11dd257e05e6c0df
 
 # Password validation
 # https://docs.djangoproject.com/en/5.1/ref/settings/#auth-password-validators
 
 AUTH_PASSWORD_VALIDATORS = [
     {
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+        'NAME': 'django.contrib.auth.password_validation.UserAttributeSimilarityValidator',
+    },
+    {
+        'NAME': 'django.contrib.auth.password_validation.MinimumLengthValidator',
+    },
+    {
+        'NAME': 'django.contrib.auth.password_validation.CommonPasswordValidator',
+    },
+    {
+        'NAME': 'django.contrib.auth.password_validation.NumericPasswordValidator',
+=======
+>>>>>>> dc1f4132362026a9f0402b8b11dd257e05e6c0df
         "NAME": "django.contrib.auth.password_validation.UserAttributeSimilarityValidator",
     },
     {
@@ -108,6 +201,10 @@ AUTH_PASSWORD_VALIDATORS = [
     },
     {
         "NAME": "django.contrib.auth.password_validation.NumericPasswordValidator",
+<<<<<<< HEAD
+=======
+>>>>>>> 9006665 (Initial commit)
+>>>>>>> dc1f4132362026a9f0402b8b11dd257e05e6c0df
     },
 ]
 
@@ -115,23 +212,55 @@ AUTH_PASSWORD_VALIDATORS = [
 # Internationalization
 # https://docs.djangoproject.com/en/5.1/topics/i18n/
 
+<<<<<<< HEAD
 LANGUAGE_CODE = "en-us"
 
 TIME_ZONE = "UTC"
+=======
+<<<<<<< HEAD
+LANGUAGE_CODE = 'en-us'
+
+TIME_ZONE = 'UTC'
+=======
+LANGUAGE_CODE = "en-us"
+
+TIME_ZONE = "UTC"
+>>>>>>> 9006665 (Initial commit)
+>>>>>>> dc1f4132362026a9f0402b8b11dd257e05e6c0df
 
 USE_I18N = True
 
 USE_TZ = True
 
+<<<<<<< HEAD
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/5.1/howto/static-files/
 
 STATIC_URL = "static/"
+=======
+
+# Static files (CSS, JavaScript, Images)
+# https://docs.djangoproject.com/en/5.1/howto/static-files/
+
+<<<<<<< HEAD
+STATIC_URL = 'static/'
+=======
+STATIC_URL = "static/"
+>>>>>>> 9006665 (Initial commit)
+>>>>>>> dc1f4132362026a9f0402b8b11dd257e05e6c0df
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.1/ref/settings/#default-auto-field
 
+<<<<<<< HEAD
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 
 MEDIA_URL = "/media/"
 MEDIA_ROOT = os.path.join(BASE_DIR, "media")
+=======
+<<<<<<< HEAD
+DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+=======
+DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
+>>>>>>> 9006665 (Initial commit)
+>>>>>>> dc1f4132362026a9f0402b8b11dd257e05e6c0df

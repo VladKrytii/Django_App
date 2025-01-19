@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 {% extends "_layout.html" %}
 
 {% block content %}
@@ -10,6 +11,15 @@
         <img src="{{form.avatar.value.url}}" alt="">
     </div>
     {% endif %}
+=======
+{% extends "index.html" %}
+
+{% block header %}Edit User{% endblock %}
+
+{% block content %}
+<form method="post">
+    {% csrf_token %}
+>>>>>>> dc1f4132362026a9f0402b8b11dd257e05e6c0df
     <div class="mb-3">
         <label class="form-label">Name</label>
         <input value="{{ form.name.value }}" type="text" name="name" class="form-control" placeholder="Enter user name">
@@ -21,6 +31,7 @@
     </div>
     <div class="mb-3">
         <label class="form-label">Phone</label>
+<<<<<<< HEAD
         <!-- <input value="{{ form.phone.value }}" type="tel" name="phone" class="form-control"
             placeholder="Enter phone number"> -->
         {{form.phone}}
@@ -32,11 +43,16 @@
     <div class="mb-3">
         <label class="form-label">New Avatar</label>
         <input type="file" name="avatar" class="form-control">
+=======
+        <input value="{{ form.phone.value }}" type="tel" name="phone" class="form-control"
+            placeholder="Enter phone number">
+>>>>>>> dc1f4132362026a9f0402b8b11dd257e05e6c0df
     </div>
     <div>
         <button type="submit" class="btn btn-primary">Edit</button>
     </div>
 </form>
+<<<<<<< HEAD
 {% endblock %}
 
 {% block script %}
@@ -60,3 +76,6 @@
     });
 </script>
 {% endblock script %}
+=======
+{% endblock %}
+>>>>>>> dc1f4132362026a9f0402b8b11dd257e05e6c0df

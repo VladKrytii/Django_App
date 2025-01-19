@@ -1,7 +1,13 @@
 {% extends "_layout.html" %}
 
+<<<<<<< HEAD
 {% block content %}
 <h1>Users List</h1>
+=======
+{% block header %}User List{% endblock %}
+
+{% block content %}
+>>>>>>> dc1f4132362026a9f0402b8b11dd257e05e6c0df
 <!-- 
 <ul>
     {% for user in users %}
@@ -34,7 +40,11 @@
                     <a href="edit/{{user.id}}" class="btn btn-warning">
                         <i class="bi bi-pencil"></i>
                     </a>
+<<<<<<< HEAD
                     <a href="/delete/{{user.id}}" class="btn btn-danger">
+=======
+                    <a href="delete/{{user.id}}" class="btn btn-danger">
+>>>>>>> dc1f4132362026a9f0402b8b11dd257e05e6c0df
                         <i class="bi bi-trash3"></i>
                     </a>
                 </div>
